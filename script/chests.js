@@ -710,7 +710,7 @@ chests[34] = {
     y: "20.4%",
     isOpened: false,
     isAvailable: function(){
-	if( items.glove || items.flute )
+	if( items.lantern && (items.glove || items.flute) )
 		return "available";
 	return "unavailable";
     }
@@ -756,7 +756,7 @@ chests[38] = {
     y: "14.8%",
     isOpened: false,
     isAvailable: function(){
-	if( items.glove || items.flute )
+	if( (items.glove && items.lantern) || items.flute )
 		return "available";
 	return "unavailable";
     }
@@ -838,7 +838,7 @@ chests[45] = {
     y: "8.5%",
     isOpened: false,
     isAvailable: function(){
-	if(items.glove || items.flute)
+	if( (items.glove && items.lantern) || items.flute)
 		if(items.mirror)
 			return "available";
 		else
@@ -1079,6 +1079,20 @@ chests[63] = {
     isAvailable: function(){
       if(items.flippers) {
         return "available";
+      } else {
+        return "unavailable";
+      }
+    }
+};
+
+chests[64] = {
+    name: "Castle Tower (requires 2 keys)",
+    x: "24.9%",
+    y: "38.9%",
+    isOpened: false,
+    isAvailable: function(){
+      if( items.lantern && ( items.sword>=2 || (items.sword>=1 && items.cape) ) ) {
+        return "possible";
       } else {
         return "unavailable";
       }
