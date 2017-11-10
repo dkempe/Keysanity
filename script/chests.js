@@ -1086,7 +1086,7 @@ chests[63] = {
 };
 
 chests[64] = {
-    name: "Castle Tower (requires 2 keys)",
+    name: "Castle Tower (1 key both chests; 2 keys to finish)",
     x: "24.9%",
     y: "38.9%",
     isOpened: false,
